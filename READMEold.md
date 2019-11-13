@@ -1,92 +1,109 @@
+# Indroduction
+<img src='investigation.jpg'>
 
-# Module 3 -  Final Project Specifications
+Working with the Northwind Database, we will be using hypothesis testing to answer a few questions about company practice, and to make recommendations based on the conclusions of the analysis performed for each question.  Below is the Schema of our Database.
+<img src="Northwind_ERD_updated.png">
 
-## Introduction
+The questions we will attempt to answer are as follows:
 
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 3.
+## [Q1 -](#question_1) We are attempting to learn if discount amount has a statistically significant effect on the quantity of a product in an order? If so, at what level(s) of discount? 
 
-## Objectives
+## [Q2 -](#question_2) We are going to investigate the effect region has on the sales per unit. Is it more profitable to sell Locally, or Abroad?
 
-* Understand all required aspects of the Final Project for Module 3
-* Understand all required deliverables
-* Understand what constitutes a successful project
+## [Q3 -](#question_3) We will investigate the effect of employment length on average order total
 
-### Final Project Summary
+## [Q4 -](#question_4) Are sales related to Employee location?
 
-Another module down--you're half way there!
+<a id="question_1"></a>
+# Q1 - [View the Q1 Notebook](http://localhost:8888/notebooks/Question_1.ipynb)
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project/master/halfway-there.gif'>
+### Does discount level have a significant effect on order quantity?
 
-For the culmination of Module 3, you just need to complete the final project!
+H0 - Discount does __NOT__ have a statistically significant effect on order quantity.<br>
+HA - Discount __DOES__ have a statistically significant effect on order quantity.
 
-### The Project
+- If H0 is rejected, the levels of significance will be investigated.
 
-For this project, you'll be working with the Northwind database--a free, open-source dataset created by Microsoft containing data from a fictional company. You probably remember the Northwind database from our section on Advanced SQL. Here's the schema for the Northwind database:
+<img align='center' src='Disc_vs_nondisc.png' width=500>
+From this graph we were able to clearly see that discount level has an effect on our order quantity.
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project/master/Northwind_ERD_updated.png'>
+```
+scs.ttest_ind(disc_sample_means, non_disc_sample_means)
+```
+Ttest_indResult(statistic=40.549810991713066, pvalue=2.9180092809123824e-44)
 
-The goal of this project is to test your ability to gather information from a real-world database and use your knowledge of statistical analysis and hypothesis testing to generate analytical insights that can be of value to the company.
+With a __p value of 0__ we can conclude that our means are not equal, thus __rejecting our null hypothesis, H0__
 
-## The Deliverables
+***
+#### Part 2 - At what level is discount most significant?
+After separating the data into discount levels, we performed a sampling means to normalize the data, the resulting distributions can be seen below.
 
-The goal of your project is to query the database to get the data needed to perform a statistical analysis.  In this statistical analysis, you'll need to perform a hypothesis test (or perhaps several) to answer the following question:
+<img align='center' src='Part2_distplot.JPG' width=400>
 
-**_Does discount amount have a statistically significant effect on the quantity of a product in an order? If so, at what level(s) of discount?_**
+we then performed a Students T-Test and determined that with an effect size of .43, the 15% discount level is the most effective.
 
-In addition to answering this question with a hypothesis test, you will also need to come up with **_at least 3 other hypotheses to test on your own_**.  These can by anything that you think could be imporant information for the company.
+__Recomendations__  
+- From these results, we recomend that all discounts below 10 are dropped, as they do not prove significant.
+- For all products where an increase in order quantity is desired, we recommend offering a 15% discount.
 
-For this hypothesis, be sure to specify both the **_null hypothesis_** and the **_alternative hypothesis_** for your question.  You should also specify if this is one-tail or a two-tail test.
+<a id="question_2"></a>
+# Q2 - [View the Q2 Notebook](http://localhost:8888/notebooks/Question_2.ipynb)
 
-For online students, there will be four deliverables for this project:
+### We are going to investigate the effect region has on the sales per unit. Is it more profitable to sell Locally, or Abroad?
 
-1. A **_Jupyter Notebook_** containing any code you've written for this project. This work will need to be pushed to your GitHub repository in order to submit your project.
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-3. A **_[Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging)_**.
-4. An **_"Executive Summary" PowerPoint Presentation_** that explains the hypothesis tests you ran, your findings, and their relevance to company stakeholders.  
+H0 - Region does __NOT__ have a statistically significant effect on sales per unit.<br>
+HA - Region __DOES__ have a statistically significant effect on sales per unit.
 
-Note: On-campus students may have different delivarables, please speak with your instructor. 
+After separating the data into Regions, we ploted them to visualize the distributions.
 
-### Jupyter Notebook Must-Haves
+<img align='center' src='q2_histograms.PNG' width=400>
 
-For this project, your Jupyter Notebook should meet the following specifications:
+With the data normalized, we were able to perform an Anova test.
 
-**_Organization/Code Cleanliness_**
+The test revealed that we can __reject the Null H0__
 
-* The notebook should be well organized, easy to follow, and code is commented where appropriate.  
-<br>  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.  
-<br>      
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.  
-<br>    
-* Any SQL code written to source data should also be included.  
+__Recommendations:__
+- With a probability factor of .85, Northern Europe has the most effect on sales, so focus should be aimed at Northern Europe.
 
-**_Findings_**
+<a id="question_3"></a>
+# Q3 - [View the Q3 Notebook](http://localhost:8888/notebooks/Question_3.ipynb)
 
-* Your notebook should clearly show how you arrived at your results for each hypothesis test, including how you calculated your p-values.   
-<br>
-* You should also include any other statistics that you find relevant to your analysis, such as effect size.
+### We will investigate the effect of employment length on average order total
 
-### Blog Post Must-Haves
+_H0_ - Employment Length does __NOT__ have a statistically significant effect on sales.<br>
+_HA_ - Employment Length __DOES__ have a statistically significant effect on sales per unit.
 
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging) for the technical requirements and blog ideas.
+We first created a column which reflected the total price of each order.
+Next we had to calculate the number of days each salesman has been with the company.
+
+<img align='center' src='Q3_employment_len.PNG' width=400>
+
+With the data normalized, we learned that the variances were not equal, so we decided to use the Kruskal-Wallis test.
+
+the resulting p-value indicated that the data is from the same distribution
+Thus, __we fail to reject the Null__
+
+<a id="question_4"></a>
+# Q4 - [View the Q4 Notebook](http://localhost:8888/notebooks/Question_4.ipynb)
+
+####  Are sales related to Employee location?
+
+_H0_ - Employee Region does __NOT__ have a statistically significant effect on sales.<br>
+_HA_ - Employee Region __DOES__ have a statistically significant effect on sales.
+
+For this question, we organized the data by the salesmans country.
+There are only 2 locations: USA, and Uk and we coded them numerically as shown below.
+
+<img align='center' src='q4_df.PNG' width=300>
+
+#### Conclusion
+- The effect size and the power here tell us that there is a relationship between sales and region,<br>
+- Employees in the USA have a greater effect on total sales than the overall sales in general
+Thus, we __reject the null H0__
+
+#### Recommendations: 
+* Focus on the team in the USA, they have higher sales than the others.
+* USA may be a good candidate for training new employees.
 
 
-### Executive Summary Must-Haves
 
-Your presentation should:
-
-* Contain between 5-10 professional quality slides detailing:
-<br>  
-    * A high-level overview of your methodology  
-    <br>  
-    * The results of your hypothesis tests  
-    <br>  
-    * Any real-world recommendations you would like to make based on your findings (ask yourself--why should the executive team care about what you found? How can your findings help the company?)  
-    <br>  
-* Take no more than 5 minutes to present  
-<br>  
-* Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.  
-
-## Grading Rubric 
-
-Online students can find a PDF of the grading rubric for this project [here](https://github.com/learn-co-curriculum/dsc-mod-3-project/blob/master/module3_project_rubric.pdf). _Note: On-campus students may have different requirements, please speak with your instructor._
