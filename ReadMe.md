@@ -26,7 +26,7 @@ __HA__ - $\mu1 != \mu2$ Mean Diacount are __not equal__ to Mean Order Quantity.
 
 - If __H0__ is rejected, the levels of significance will be investigated.
 
-<img align='center' src='https://github.com/Cheffrey2000/dsc-mod-3-project-online-ds-ft-090919/Disc_vs_nondisc.png' width=500>
+<img align='center' src='Disc_vs_nondisc.png' width=500>
 From this graph we were able to clearly see that discount level has an effect on our order quantity.
 
 ```
@@ -40,7 +40,7 @@ With a __P Value of 0__ we can conclude that our means are not equal, thus __rej
 #### Part 2 - At what level is discount most significant?
 After separating the data into discount levels, we performed a sampling means to normalize the data, the resulting distributions can be seen below.
 
-<img align='center' src='https://github.com/Cheffrey2000/dsc-mod-3-project-online-ds-ft-090919/Part2_distplot.JPG' width=400>
+<img align='center' src='Part2_distplot.JPG' width=400>
 
 We then performed a __Students T-Test__ and determined that with an effect size of .43, the 15% discount level is the most effective.
 
