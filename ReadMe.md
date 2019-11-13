@@ -17,7 +17,7 @@ The questions we will attempt to answer are as follows:
 ***
 
 <a id="question_1"></a>
-## Q1 - [View the Q1 Notebook](http://localhost:8888/notebooks/Question_1.ipynb)
+## Q1 - [View the Q1 Notebook](Question_1.ipynb)
 
 ### Does discount level have a significant effect on order quantity?
 
@@ -49,7 +49,7 @@ __Recomendations__
 - For all products where an increase in order quantity is desired, we __recommend offering a 15% discount__.
 
 <a id="question_2"></a>
-# Q2 -  [View the Q2 Notebook](http://localhost:8888/notebooks/Question_2.ipynb)
+# Q2 -  [View the Q2 Notebook](Question_2.ipynb)
 
 ### We are going to investigate the effect region has on the sales per unit. Is it more profitable to sell Locally, or Abroad?
 
@@ -70,7 +70,7 @@ __Recommendations:__
 ***
 
 <a id="question_3"></a>
-# Q3 -  [View the Q3 Notebook](http://localhost:8888/notebooks/Question_3.ipynb)
+# Q3 -  [View the Q3 Notebook](Question_3.ipynb)
 
 ### We will investigate the effect of employment length on average order total
 
@@ -90,7 +90,7 @@ Thus, __we fail to reject the Null__
 ***
 
 <a id="question_4"></a>
-# Q4 - [View the Q4 Notebook](http://localhost:8888/notebooks/Question_4.ipynb)
+# Q4 - [View the Q4 Notebook](Question_4.ipynb)
 
 ####  Are sales related to Employee location?
 
