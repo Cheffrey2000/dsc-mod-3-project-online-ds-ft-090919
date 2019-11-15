@@ -1,4 +1,4 @@
-# Indroduction
+# Introduction
 <img src='investigation.jpg'>
 
 You can view the Slide Show Presentation here [Slide Show](https://docs.google.com/presentation/d/1VeJm4oCeQblWxb-2E1sas6GPmbP9rw7D7NhsHdDaxFg/edit?usp=sharing)
