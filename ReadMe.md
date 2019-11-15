@@ -1,6 +1,8 @@
 # Indroduction
 <img src='investigation.jpg'>
 
+You can view the Slide Show Presentation here [Slide Show](https://docs.google.com/presentation/d/1VeJm4oCeQblWxb-2E1sas6GPmbP9rw7D7NhsHdDaxFg/edit?usp=sharing)
+
 Working with the Northwind Database, we will be using hypothesis testing to answer a few questions about company practice, and to make recommendations based on the conclusions of the analysis performed for each question.  Below is the Schema of our Database.
 <img src="Northwind_ERD_updated.png">
 
